@@ -1,0 +1,39 @@
+body
+{
+    font-family: 'Lato', sans-serif;
+}
+
+.chan-list li
+{
+    display: inline-block;
+}
+.chan-list li a
+{
+    color: white;
+}
+.chan-list li a:hover
+		     {
+			 color: #f9c91b;
+			 transition: 0.5s;
+			 text-decoration: none;
+		     }
+a:hover
+		     {
+			 color: #d69b4f;
+			 transition: 0.5s;
+			 text-decoration: none;
+		     }
+
+.social-list li
+{
+    list-style-type: none;
+}
+.study-list li
+{
+    list-style-type: none;
+}
+
+.to-do-list
+{
+    margin-left: 50px;
+}

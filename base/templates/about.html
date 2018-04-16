@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Sobre o site, e eu | {{ block.super }} {% endblock %}
+    {% block content %}
+
+<div class="wrapper">
+  <div class="container about">
+    <div class="about-body">
+	{{about.body|safe}}
+    </div>
+  </div>
+</div>
+    {% endblock %}
+
