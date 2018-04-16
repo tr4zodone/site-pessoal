@@ -13,114 +13,44 @@
     Talvez ela facilite a sua também.
 </p>
 
+
 {% endif %}
+
 	<!-- navbar | 4chan | TODO: Adicionar link para página com gráfico da bolsa/criptomoedas -->
-	<nav style="background: #4f70d6;">
-	    <ul class="chan-list">
-		<div class="container" style="padding: 10px 0px 10px 0px;">
-		    <span style="color: #ddd; font-size: 16px;">[ <strong><li><a target="_blank" href="http://boards.4chan.org/3/catalog">3</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/an/catalog">an</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/biz/catalog">biz</a></li>/
-		    <li><a target="_blank" href="http://boards.4chan.org/ck/catalog">ck</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/diy/catalog">diy</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/fit/catalog">fit</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/g/catalog">g</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/ic/catalog">ic</a></li> /
-		    <li><a target="_blank" href="http://boards.4chan.org/lit/catalog">lit</a></li> /
-		    </strong></span>
-		</div>
-	    </ul>
-	</nav>
-
-	<h1 class="text-center" style="font-size: 45px; margin-left: 45px;">STRT</h1>
-
-	<div class="container">
-	    <hr>
-	    <div class="col-lg-4 text-center center-block">
-		<ul class="social-list" style="font-size: 16px;">
-		    <h2>Social</h2>
-		    <hr />
-		    <li><a target="_blank" href="http://web.whatsapp.com/">WhatsApp</a></li>
-		    <li><a target="_blank" href="http://www.youtube.com/">YouTube</a></li>
-		    <li><a target="_blank" href="http://www.twitter.com/">Twitter</a></li>
-		    <li><a target="_blank" href="http://www.facebook.com/">Facebook</a></li>
-		    <li><a target="_blank" href="http://www.pinterest.com">Pinterest</a></li>
-		    <li><a target="_blank" href="http://www.Instagram.com">Instagram</a></li>
-		</ul>
-	    </div>
-
-	    <div class="col-lg-4 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Estudos</h2>
-		    <hr/>
-		    <li><a target="_blank" href="https://helpx.adobe.com/photoshop/tutorials.html">Adobe Tutorials</a></li>
-		    <li><a target="_blank" href="http://www.cgcookie.com">CG Cookie</a></li>
-		    <li><a target="_blank" href="http://www.edx.org">Edx</a></li>
-		    <li><a target="_blank" href="http://www.khanacademy.com">Khan Academy</a></li>
-		    <li><a target="_blank" href="http://www.teamtreehouse.com">Treehouse</a></li>
-		    <li><a target="_blank" href="http://www.udemy.com">Udemy</a></li>
-		</ul>
-	    </div>
-
-	    <div class="col-lg-4 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Referências</h2>
-		    <hr/>
-		    <li><a target="_blank" href="https://color.adobe.com">Adobe Color CC</a></li>
-		    <li><a target="_blank" href="http://3d.sk">3D.SK</a></li>
-		    <li><a target="_blank" href="http://www.posemaniacs.com">Pose Maniacs</a></li>
-		    <li><a target="_blank" href="https://learnopengl.com">Learn OpenGL</a></li>
-		    <li><a target="_blank" href="http://www.w3schools.com">w3schools.com</a></li>
-		    <li><a target="_blank" href="https://getbootstrap.com/docs/3.3/getting-started/">Bootstrap</a></li>
-		</ul>
-	    </div>
-	</div>
+	<div class="wrapper">
 	    <div class="container">
-	    <div class="col-lg-3 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Investimentos</h2>
-		    <hr/>
-		    <li><a target="_blank" href="https://www.rico.com.vc">Rico</a></li>
-		    <li><a target="_blank" href="https://www.bittrex.com">Bittrex</a></li>
-		    <li><a target="_blank" href="https://www.poloniex.com">Poloniex</a></li>
-		    <li><a target="_blank" href="https://www.foxbit.exchange/#signin">FoxBit</a></li>
-		    <li><a target="_blank" href="https://www.mercadobitcoin.com.br">Mercado Bitcoin</a></li>
-		</ul>
-	    </div>
-		    <div class="col-lg-3 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Comércio</h2>
-		    <hr/>
-		    <li><a target="_blank" href="https://www.mercadolivre.com/">Mercado Livre</a></li>
-		    <li><a target="_blank" href="https://www.saraiva.com.br">Saraiva</a></li>
-		    <li><a target="_blank" href="https://www.livrariacultura.com.br">Livraria Cultura</a></li>
-		    <li><a target="_blank" href="http://www.estantevirtual.com.br">Estante Virtual</a></li>
-		</ul>
-	    </div>
+	      <ul class="chan-list">
+		<span>
+		  [
+		    {% for chan in chans %}
+		  <li>
+		    <a target="_blank" href="http://boards.4chan.org/{{chan.initials}}/catalog">{{chan.initials}}</a></li> {% if not forloop.last %} / {% endif %}
+		  {% endfor %}
+		  ]
+		</span>
+	      </ul>
+	      <div class="resources">
+		{% for category in categories %}
+		<div class="resource-instance" id="{{category.title}}">
+		  <h2 class="category-title">
+		    {{category}}
+		  </h2>
+		  <ul class="resource-list">
+		  {% for resource in resources %} 
 
-	    <div class="col-lg-3 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Hosting</h2>
-		    <hr/>
-		    <li><a target="_blank" href="https://www.pythonanywhere.com">Python Anywhere</a></li>
-		    <li><a target="_blank" href="https://www.digitalocean.com">Digital Ocean</a></li>
-		</ul>
-	    </div>
+		  {% if resource.category == category %}
+			    <li class="resource-item">
+			    <a target="_blank" href="{{resource.url}}">{{resource.name}}</a>
+			    </li>
 
-	    <div class="col-lg-3 text-center center-block">
-		<ul class="study-list" style="font-size: 16px;">
-		    <h2>Utilidades</h2>
-		    <hr/>
-		    <li><a target="_blank" href="http://www.coletivorexiste.com">Coletivo (R)existe</a></li>
-		    <li><a target="_blank" href="https://docs.google.com/spreadsheets/u/0/">Google Sheets</a>//li>
-	            <li><a target="_blank" href="http://www.github.com">Github</a></li>
-	            <li><a target="_blank" href="http://www.portalcna.com.br">Portal CNA</a></li>
-	            <li><a target="_blank" href="http://www.cnabox.com.br">CNA Box</a></li>
-	            <li><a target="_blank" href="http://www.dropbox.com">Dropbox</a></li>
-		    <li><a target="_blank" href="http://127.0.0.1:8000">localhost:8000</a></li>
-		    <li><a target="_blank" href="http://localhost:5000">localhost:5000</a></li>
-		</ul>
-	    </div>
+			{% endif %}
 
+		    {% endfor %}
+		  </ul>
+		</div>
+		{% endfor %}
+		</div>
+	    </div> 
+	</div>
 
 {% endblock %}

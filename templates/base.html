@@ -28,8 +28,10 @@
             <li><a href="{% url 'index' %}">início</a></li>
             <li><a href="{% url 'blog' %}">blog</a></li>
             <li><a href="{% url 'about' %}">sobre</a></li>
+
             {% if user.is_authenticated %}
-            <li><a href="{% url 'manager' %}">Painel</a></li>
+	    <li class="admin-only"><a href="{% url 'admin:index' %}">ADMIN</a></li>
+	    <li class="admin-only"><a href="{% url 'manager' %}">Resources</a></li>
             {% endif %}
         </ul>
 
