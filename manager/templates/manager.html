@@ -4,23 +4,13 @@
 
 {% block content %}
 
-
-{% if not user.is_authenticated %}
-
-<p>
-    Bom. Interessante. Esta parte do site não foi feita exatamente para você, mas não há mal que dela saiba. Criei esta página para facilitar minha vida.
-    <br />
-    Talvez ela facilite a sua também.
-</p>
-
-
-{% endif %}
-
-	<!-- navbar | 4chan | TODO: Adicionar link para página com gráfico da bolsa/criptomoedas -->
 	<div class="wrapper">
-	    <div class="container">
+	      
 	      <ul class="chan-list">
 		<span>
+		  4chanBoards<br>
+
+		  <hr id="divider">
 		  [
 		    {% for chan in chans %}
 		  <li>
@@ -29,11 +19,13 @@
 		  ]
 		</span>
 	      </ul>
+
+
 	      <div class="resources">
 		{% for category in categories %}
 		<div class="resource-instance" id="{{category.title}}">
 		  <h2 class="category-title">
-		    {{category}}
+		    {{category.title}}
 		  </h2>
 		  <ul class="resource-list">
 		  {% for resource in resources %} 
@@ -50,7 +42,7 @@
 		</div>
 		{% endfor %}
 		</div>
-	    </div> 
+
 	</div>
 
 {% endblock %}

@@ -6,14 +6,15 @@
 
 
 <div class="wrapper">
-    <div class="container ">
 
     <a class="back-button" href="{% url 'blog' %}">&#11013; Voltar</a>
 
     <div class="container-tight">
 
       <div class="blog-container">
-	    <h1 style="margin: 0 auto;">{{post.title}}</h1>
+	<div class="post-container">
+
+	    <h1>{{post.title}}</h1>
 
 	    {% if post.published_date %}
 		<div class="published-date">
@@ -22,12 +23,11 @@
 	    {% endif %}
 
 	    <p>
-		{{post.content|safe}}
+	      {{post.content|safe}}
 	    </p>
-
+	    <span class="post-category">Categoria:&nbsp;<p>{{ post.tag }}</p></span>
 	</div>
-
-    </div>
+      </div>
     </div>
 </div>
 

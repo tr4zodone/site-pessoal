@@ -128,15 +128,6 @@ a:hover h1, a:hover h2 {
 	    background-color: #977;
 	    color: #fffebc; 
 	}
-
-    }
-
-    &.admin-only {
-	&:hover {
-	    a {
-	   background-color: #789;
-	    }
-	}
     }
 
  }
@@ -257,6 +248,12 @@ footer {
 #divider {
 
     color: #99777755; 
+}
+
+.admin-only {
+    &:hover {
+	background: #789 !important;
+    }
 }
 
 .resources {
