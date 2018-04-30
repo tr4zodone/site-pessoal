@@ -11,7 +11,7 @@
       <div class="blog-container">
       {% for post in posts %}
       <div class="post-container">
-	<a href="{% url 'post_detail' pk=post.pk slug=post.slug %}"><h2>{{ post.title}}</h2></a>
+	<a class="post-title" href="{% url 'post_detail' pk=post.pk slug=post.slug %}"><h2>{{ post.title}}</h2></a>
 	{% if post.published_date %}
 	<div class="published-date">
 	    {{ post.published_date }}
@@ -28,8 +28,8 @@
       <div class="category-container">
 	<h2>Categorias</h2>
 	<ul>
-	{% for tag in tags %}
-	<li><a href="{% url 'tag_filter' slug=tag.slug %}"></a>{{ tag.title }}</li>
+	  {% for tag in tags %}
+	  <li><a href="{% url 'tag_filter' slug=tag.slug %}">{{ tag.title }}</a></li>
 	{% endfor %}
 	</ul>
       </div>
