@@ -59,3 +59,4 @@ class Post(models.Model):
         instance.slug = slugify(instance.title)
 
     signals.pre_save.connect(article_pre_save, sender="blog.Post")
+
