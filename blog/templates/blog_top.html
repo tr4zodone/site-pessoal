@@ -6,11 +6,8 @@
 {% block content %}
 
 <div class="wrapper">
-
-
-
-  <h1>Últimas postagens</h1>
     <div class="container-tight">
+      <h1 id="last-posts">Últimas postagens</h1>
       <div class="blog-container">
       {% for post in posts %}
       <div class="post-container">
@@ -21,10 +18,13 @@
 	</div>
 	{% endif %}
 
-	<p>{{post.content|truncatechars_html:256|safe}}</p>
-	<span class="post-category">Categoria:&nbsp;<p>{{ post.tag }}</p></span>
+	<p>{{post.content|truncatechars_html:280|safe}}<a class="read-more" href="{% url 'post_detail' pk=post.pk slug=post.slug %}">Continuar lendo</a></p>
+	
+	<span class="post-category">Em:&nbsp;<p>{{ post.tag }}</p></span>
       </div>
       {% endfor %}
+
+    </div>
       <div class="category-container">
 	<h2>Categorias</h2>
 	<ul>
@@ -33,8 +33,7 @@
 	{% endfor %}
 	</ul>
       </div>
-    </div>
   </div>
-  </div>
+</div>
 
 {% endblock %}
