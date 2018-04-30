@@ -46,7 +46,7 @@ def blog_top_view(request):
 
 def blog_view_per_tag(request, slug):
     tag = Tag.objects.get(slug=slug)
-    posts = Posts.objects.all().filter(tag=tag).distinct()
+    posts = Post.objects.all().filter(tag=tag).distinct()
 
     context = {
         'tag':tag,

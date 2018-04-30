@@ -29,7 +29,7 @@
 	<h2>Categorias</h2>
 	<ul>
 	{% for tag in tags %}
-	<li><a href="">{{tag.title}}</a></li>
+	<li><a href="{% url 'tag_filter' slug=tag.slug %}"</a>{{ tag.title }}</li>
 	{% endfor %}
 	</ul>
       </div>

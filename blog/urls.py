@@ -8,6 +8,10 @@ urlpatterns = [
     #detail
     re_path("posts/(?P<pk>\d+)/(?P<slug>[-\w]+)/$", views.PostDetailView.as_view(), name="post_detail"),
 
+    re_path("posts/(?P<pk>\d+)/(?P<slug>[-\w]+)/$", views.PostDetailView.as_view(), name="post_detail"),
+
+    path("posts/<slug:slug>/", views.blog_view_per_tag, name="tag_filter"),
+
     # criar
     path(r'posts/create/new/', views.NovoPost.as_view(), name='novo_post'),
 

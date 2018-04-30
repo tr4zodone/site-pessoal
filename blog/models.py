@@ -11,7 +11,7 @@ def instance_pre_save(signal, instance, sender, **kwargs):
 
 # Create your models here.
 class Tag(models.Model):
-    slug = models.SlugField(max_length=100, blank=True, default="")
+    slug = models.SlugField(max_length=100, blank=True)
     title = models.CharField(max_length=90, blank=False, unique=True,
                               error_messages={'unique':"Essa tag ja existe"})
 
