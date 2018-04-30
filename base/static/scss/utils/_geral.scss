@@ -1,0 +1,43 @@
+/* estilos "onipresentes" */
+
+* {
+  box-sizing: border-box;
+  outline: 0; }
+
+body {
+  margin: 0 auto;
+  background: $background-color;
+  font-family: $sf; 
+  font-size: 1em; }
+  @media screen and (max-width: $medium-bp) {
+    body {
+      max-width: $medium-bp; } }
+
+  h1 {
+      color: darken($primary-text-color, 10%);
+      margin-top: 0;
+  }
+a h1, a h2 {
+    color: $primary-text-color;
+    transition: color 0.4s ease-out;
+    margin-bottom: .1em;
+    text-decoration: none; }
+a:hover h1, a:hover h2 {
+  color: $primary-hover-color; }
+
+.container {
+  width: 90%;
+  margin: 1em auto 0;
+  display: block; }
+  @media screen and (max-width: $medium-bp) {
+    .container {
+      width: 97%; } }
+  @media screen and (max-width: $small-bp) {
+    .container p {
+      margin: 1em; } }
+
+.wrapper {
+  background: $background-color;
+  padding-top: 1em;
+  min-height: calc(100vh - 102px); }
+

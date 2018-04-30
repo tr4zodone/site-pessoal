@@ -1,0 +1,63 @@
+.main-nav {
+    background-color: $foreground-color;
+    box-shadow: 1px 1px 3px 1px lighten($primary-text-color, 30%);
+    display: flex;
+    padding: 0;
+    list-style: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: $medium-bp) {
+	flex-direction: row;
+	padding: 0 1em;
+    }
+}
+
+.main-nav li {
+    @media screen and (max-width: $medium-bp) {
+	width: 100%;
+	display: flex;
+    }
+    @media screen and (min-width: $medium-bp ){
+
+	padding: 1em 0;
+    }
+
+    list-style: none;
+    text-align: center;
+    font-family: "Alegreya Sans SC", sans-serif;
+    text-transform: lowercase;
+    display: inline-block;
+    text-align: left;
+    
+    a {
+	@media screen and (max-width: $medium-bp) {
+	    width: 100%;
+	    text-align: center;
+	    margin: auto;
+	}
+	text-decoration: none;
+	color: $primary-text-color;
+	transition: color .4s ease-out, background .2s ease-in;
+	font-size: 1.2em;
+	padding: 1em;
+	&:hover{
+	    background-color: $primary-text-color;
+	    color: $secondary-text-color; 
+	}
+
+    }
+
+    &.admin-only {
+	&:hover {
+	    a {
+		background-color: $footer-color;
+	    }
+	}
+    }
+
+ }
+    .main-nav a:hover {
+	text-decoration: underline;
+      color: $primary-hover-color; }
+
