@@ -2,6 +2,9 @@ db.sqlite3
 __pycache_/*
 */__pycache__/
 /__pycache__
+*/migrations
 iampaulo_venv/
 /iampaulo_venv
 *~
+.sass-cache
+.#*
