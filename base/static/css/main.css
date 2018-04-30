@@ -318,4 +318,8 @@ footer .container p {
       order: 0;
       flex-basis: 100%; } }
 
+.tag-filter {
+  text-decoration: underline;
+  font-weight: 100; }
+
 /*# sourceMappingURL=main.css.map */

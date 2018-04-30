@@ -5,14 +5,32 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
 
+# update slugs automatically
+def instance_pre_save(signal, instance, sender, **kwargs):
+    instance.slug = slugify(instance.title)
+
 # Create your models here.
 class Tag(models.Model):
+    slug = models.SlugField(max_length=100, blank=True)
     title = models.CharField(max_length=90, blank=False, unique=True,
                               error_messages={'unique':"Essa tag ja existe"})
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+        super(Tag, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse("posts_per_category", kwargs={'slug':self.slug})
 
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = "Categoria"
+        verbose_name_plural = "Categorias"
+
+    signals.pre_save.connect(instance_pre_save, sender="blog.Tag")
 
 class Post(models.Model):
     title = models.CharField(max_length=120, unique=True, error_messages={'unique': "Voce ja criou uma postagem com esse titulo"})
@@ -29,7 +47,6 @@ class Post(models.Model):
         if not self.id:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
-
 
     def publish(self):
         self.published_date = timezone.now()

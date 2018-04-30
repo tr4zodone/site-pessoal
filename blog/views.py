@@ -44,6 +44,17 @@ def blog_top_view(request):
 
     return render(request, "blog_top.html", context)
 
+def blog_view_per_tag(request, slug):
+    tag = Tag.objects.get(slug=slug)
+    posts = Post.objects.all().filter(tag=tag).distinct()
+
+    context = {
+        'tag':tag,
+        'posts': posts,
+    }
+
+    return render(request, "blog/view_per_tag.html", context)
+
 class PostDetailView(DetailView):
     model = Post
     slug_field = "title"

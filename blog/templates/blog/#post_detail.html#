@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %} {{post.title}} | {{block.super}} {% endblock %}
+
+{% block content %}
+
+
+<div class="wrapper">
+
+   <a class="back-button" href="{% url 'blog' %}">&#11013; Voltar</a>
+
+    <div class="container-tight">
+
+      <div class="blog-container">
+	<div class="post-container">
+
+	    <h1>{{post.title}}</h1>
+
+	    {% if post.published_date %}
+		<div class="published-date">
+		    {{ post.published_date }}
+		</div>
+	    {% endif %}
+
+	    <p>
+	      {{post.content|safe}}
+	    </p>
+	    <span class="post-category">Categoria:&nbsp;<p>{{ post.tag }}</p></span>
+	</div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

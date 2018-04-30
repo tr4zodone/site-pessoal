@@ -6,33 +6,24 @@
 {% block content %}
 
 <div class="wrapper">
+  <a class="back-button" href="{% url 'blog' %}">&#11013; Voltar</a>
+  <h1>Postagens em: <span class="tag-filter">{{tag}}</span></h1>
     <div class="container-tight">
-      <h1 id="last-posts">Últimas postagens</h1>
       <div class="blog-container">
       {% for post in posts %}
+	{% if post.published_date %}
       <div class="post-container">
 	<a href="{% url 'post_detail' pk=post.pk slug=post.slug %}"><h2>{{ post.title}}</h2></a>
-	{% if post.published_date %}
 	<div class="published-date">
 	    {{ post.published_date }}
 	</div>
-	{% endif %}
 
 	<p>{{post.content|truncatechars_html:280|safe}}<a class="read-more" href="{% url 'post_detail' pk=post.pk slug=post.slug %}">Continuar lendo</a></p>
 	
-	<span class="post-category">Em:&nbsp;<p>{{ post.tag }}</p></span>
       </div>
+	{% endif %}
       {% endfor %}
-
     </div>
-      <div class="category-container">
-	<h2>Categorias</h2>
-	<ul>
-	{% for tag in tags %}
-	<li><a href="{% url 'tag_filter' slug=tag.slug %}"</a>{{ tag.title }}</li>
-	{% endfor %}
-	</ul>
-      </div>
   </div>
 </div>
 

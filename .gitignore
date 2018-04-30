@@ -1,6 +1,6 @@
 db.sqlite3
-__pycache__
-__pycache__/
+__pycache_/*
+*/__pycache__/
 /__pycache__
 iampaulo_venv/
 /iampaulo_venv
