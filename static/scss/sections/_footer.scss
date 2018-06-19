@@ -1,0 +1,48 @@
+footer {
+    padding-bottom: 2em;
+  background-color: $footer-color; }
+  footer p {
+    vertical-align: middle;
+    color: $secondary-text-color;
+    text-align: left;
+    padding: 2em 1em 1em; }
+
+    @media screen and (min-width: $medium-bp) {
+        footer p {
+            padding: 2em 0em 1em; }
+     }
+
+
+  footer a {
+    color: $secondary-text-color;
+    text-transform: lowercase;
+    font-family: $sc; 
+    transition: color .4s ease-out; }
+
+    footer a:hover {
+      color: $secondary-hover-color; }
+  footer .container {
+    margin-top: 0; }
+
+
+.cc-license {
+    font-size: .8em;
+}
+
+.cc-license p {
+    padding: 1em;
+    text-align: justify;
+}
+
+@media screen and (min-width: $medium-bp) {
+    .cc-license p {
+        padding: 0.3em 1em 1em;
+    }
+}
+@media screen and (max-width: $medium-bp) {
+    a.cc-license{
+        padding: 1em;
+        margin:0;
+    }
+}
+

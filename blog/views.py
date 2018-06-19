@@ -16,7 +16,7 @@ from django.views.generic import (CreateView, DetailView,
 def blog_top_view(request):
     context = {}
 
-    posts = Post.objects.all().filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.all().filter(published_date__isnull=False).order_by('-published_date')
     tags = Tag.objects.all().order_by('-title')
 
     query = request.GET.get("q")

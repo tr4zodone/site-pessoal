@@ -1,0 +1,23 @@
+
+.about {
+    background-color: #fff;
+    box-shadow: 1px 1px 3px 1px lighten($primary-text-color, 30%);
+    p {
+	color: #333;
+    }
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+  @media screen and (min-width: $medium-bp) {
+      .about {
+	  width: 60%;
+	  
+      }
+    .about-body {
+      width: 100%; } }
+
+          footer .container p {
+	      margin: 0;
+	  }
+

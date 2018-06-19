@@ -1,0 +1,97 @@
+
+.chan-list {
+
+    display: block;
+    background-color: $foreground-color;
+    box-shadow: 1px 1px 3px 1px lighten($primary-text-color, 30%);
+    padding: 1em;
+    li {
+	display: inline-block;
+    }
+
+    li a {
+	color: $primary-text-color;
+	transition: color .5s;
+	font-size: 1.2em;
+	text-decoration: none;
+
+	&:hover {
+	    color: $primary-hover-color; 
+	    text-decoration: underline;
+	}
+    }
+
+    span {
+	color: lighten($primary-text-color, 20%);
+	font-size: 1.3em;
+    }
+
+
+}
+
+#divider {
+
+    color: rgba($primary-text-color, 0.3); 
+}
+
+.resources {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 1.3em;
+    padding-bottom: 2em;
+}
+
+.resource-instance {
+    box-sizing: border-box;
+    background-color: $foreground-color;
+    padding: 1em;
+    margin-top: 1em;
+    box-shadow: 1px 1px 3px 1px lighten($primary-text-color, 30%);
+    flex-basis: 100%;
+    @media screen and (min-width: $medium-bp) {
+	flex-basis: 50%; 
+    }
+    @media screen and (min-width: $large-bp) {
+	flex-basis: 32.3%;
+    }
+}
+
+.category-title {
+    color: darken($primary-text-color, 10%);
+    font-weight: normal;
+}
+
+.resource-list {
+    list-style: none;
+    margin-left: 0.3em;
+    padding: 0;
+
+}
+
+.resource-item {
+
+    a {
+	color: $primary-text-color;
+	text-decoration: none;
+	transition: color .4s;
+	&:hover {
+	    color: $primary-hover-color;
+	    text-decoration: underline;
+	}
+    }
+}
+
+#Estudos {
+    order: 0;
+}
+
+#Comércio {
+    order: 1;
+}
+
+#Hosting
+{
+    order: 2;
+}
+

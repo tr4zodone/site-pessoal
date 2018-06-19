@@ -8,3 +8,4 @@ iampaulo_venv/
 *~
 .sass-cache
 .#*
+*.pyc

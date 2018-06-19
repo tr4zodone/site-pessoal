@@ -1,0 +1,25 @@
+
+// breakpoints
+$small-bp: 540px;
+$medium-bp: 768px;
+$large-bp: 970px;
+
+// text colors
+$primary-text-color: darken(#e3e7ed, 30%);
+$primary-hover-color: darken($primary-text-color, 15%);
+
+
+// footer color
+$footer-color: darken($primary-text-color, 5%);
+
+// secondary text color
+$secondary-text-color: #fffebc;
+$secondary-hover-color: #fffaf2;
+
+// background and foreground
+$background-color: lighten(#e3e7ed, 7%); 
+$foreground-color: #fff;
+
+// fonts
+$sf: "Alegreya Sans", sans-serif;
+$sc: "Alegreya Sans SC", "Alegreya Sans", sans-serif; 

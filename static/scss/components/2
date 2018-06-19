@@ -1,0 +1,11 @@
+.back-button {
+  text-decoration: none;
+  color: $primary-text-color;
+  padding-bottom: 1em;
+  display: inline-block;
+  font-size: 1.5em;
+  transition: color .4s ease-out; }
+  .back-button:hover {
+      color: darken($primary-hover-color,30%);
+  }
+

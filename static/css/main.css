@@ -100,6 +100,7 @@ a:hover h1, a:hover h2 {
 
 .blog-container {
   line-height: 1.6;
+  font-size: 1.3em;
   align-self: stretch;
   flex-grow: 1;
   width: 100%; }
@@ -112,7 +113,7 @@ a:hover h1, a:hover h2 {
   text-decoration: none; }
 
 .post-container {
-  padding: 1em;
+  padding: 1em 2em;
   background-color: #fff;
   box-shadow: 1px 1px 3px 1px #e3e7ed;
   margin-bottom: 1.5em; }
