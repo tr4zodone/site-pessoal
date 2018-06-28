@@ -27,7 +27,7 @@ a:hover h1, a:hover h2 {
 
 .container {
   width: 90%;
-  margin: 1em auto 0;
+  margin: 0 auto 0;
   display: block; }
   @media screen and (max-width: $medium-bp) {
     .container {
@@ -38,6 +38,5 @@ a:hover h1, a:hover h2 {
 
 .wrapper {
   background: $background-color;
-  padding-top: 1em;
   min-height: calc(100vh - 102px); }
 

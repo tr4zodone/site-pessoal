@@ -18,7 +18,7 @@
 	</div>
 	{% endif %}
 
-	<p>{{post.content|truncatechars_html:280|safe}}<a class="read-more" href="{% url 'post_detail' pk=post.pk slug=post.slug %}">Continuar lendo</a></p>
+	<div class="post-content">{{post.content|truncatechars_html:280|safe}}</div><a class="read-more" href="{% url 'post_detail' pk=post.pk slug=post.slug %}">Continuar lendo</a>
 	
 	<span class="post-category">Em:&nbsp;<p>{{ post.tag }}</p></span>
       </div>

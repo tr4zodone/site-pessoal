@@ -17,7 +17,11 @@ def index_view(request):
 def about_view(request):
     context = {}
 
-    about = About.objects.get(id=1)
+    try:
+        about = About.objects.first()
+    except: 
+        pass
+
     context["about"] = about
 
     return render(request, "about.html",context)

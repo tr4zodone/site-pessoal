@@ -29,6 +29,7 @@ def blog_top_view(request):
             ).distinct()
     paginator = Paginator(posts, 10)
     try:
+
         posts = paginator.page(page)
 
     except PageNotAnInteger:

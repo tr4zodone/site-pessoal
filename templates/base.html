@@ -28,18 +28,22 @@
     </head>
     <body>
         <div class="wrapper">
-        <div class="container">
         <ul class="main-nav">
-            <li><a href="{% url 'index' %}">início</a></li>
-            <li><a href="{% url 'blog' %}">blog</a></li>
-            <li><a href="{% url 'about' %}">sobre</a></li>
+            <div class="container">
+                <h1 class="abs-header"><a class="header-index-link"href="{% url 'index' %}">pauloroberto.me</a></h1>
+                <li><a href="{% url 'blog' %}">blog</a></li>
+                <li><a href="{% url 'about' %}">sobre</a></li>
 
-            {% if user.is_authenticated %}
-	    <li class="admin-only"><a href="{% url 'admin:index' %}">ADMIN</a></li>
-	    <li><a href="{% url 'manager' %}">Resources</a></li>
-            {% endif %}
+                {% if user.is_authenticated %}
+                <li class="admin-only"><a href="{% url 'admin:index' %}">ADMIN</a></li>
+                <li><a href="{% url 'manager' %}">Resources</a></li>
+                    {% endif %}
+            </div>
         </ul>
 
+
+
+        <div class="container">
             {% block content %}
 
             {% endblock %}
@@ -47,7 +51,7 @@
     </div>
     <footer>
         <div class="container">
-            <p>v. 2.1 <br>Desenvolvido, orgulhosamente, com <a target="_blank" href="https://www.djangoproject.com/">Django</a>.</p>
+            <p>v. 2.2 <br>Desenvolvido, orgulhosamente, com <a target="_blank" href="https://www.djangoproject.com/">Django</a>.</p>
             <a rel="license" class="cc-license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
         </div>
     </footer>
