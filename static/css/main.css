@@ -36,7 +36,12 @@ a:hover h1, a:hover h2 {
     width: 97%; } }
 @media screen and (max-width: 540px) {
   .container p {
-    margin: 1em; } }
+    margin: 1em; }
+
+  .post-container p {
+      margin: 1em 0;
+  }
+}
 .wrapper {
   background: #f9fafb;
   padding-top: 1em;
@@ -100,7 +105,6 @@ a:hover h1, a:hover h2 {
 
 .blog-container {
   line-height: 1.6;
-  font-size: 1.3em;
   align-self: stretch;
   flex-grow: 1;
   width: 100%; }
@@ -147,6 +151,7 @@ a:hover h1, a:hover h2 {
     color: #677d9d; }
   .category-container ul {
     list-style: none;
+    line-height: 1.6em;
     padding: 0;
     text-decoration: none; }
   @media screen and (max-width: 970px) {
