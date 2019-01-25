@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %} para gerenciar minha vida | {{block.super}} {% endblock %}
 
 {% block content %}
 
+{% load update_variable %}
+
 	<div class="wrapper">
 	      
-	      <ul class="chan-list">
+	<ul class="chan-list">
 		<span>
 		  4chanBoards<br>
 
@@ -18,31 +22,47 @@
 		  {% endfor %}
 		  ]
 		</span>
-	      </ul>
+	    </ul>
 
+	{% if user.is_staff %}
+	    <div class="add-resource" >
+	      <form action="/manager/" method="POST" id="post-form">
+		{% csrf_token %}
+		{% for field in form.visible_fields %}
+		<p>
+		{{field}}
+		</p>
+		{% endfor %}
+		<input type="submit" value="Criar">
+	      </form>
+	    </div>
+	{% endif %}
 
 	      <div class="resources">
+
 		{% for category in categories %}
-		<div class="resource-instance" id="{{category.title}}">
+		<div class="resource-instance" id="{{ category.title|cut:' ' }}">
+
 		  <h2 class="category-title">
 		    {{category.title}}
 		  </h2>
-		  <ul class="resource-list">
+		  <ul class="resource-list" id="{{category.title|cut:' ' }}-list">
 		  {% for resource in resources %} 
 
 		  {% if resource.category == category %}
 			    <li class="resource-item">
 			    <a target="_blank" href="{{resource.url}}">{{resource.name}}</a>
 			    </li>
-
 			{% endif %}
-
 		    {% endfor %}
+
 		  </ul>
 		</div>
+
 		{% endfor %}
 		</div>
-
 	</div>
-
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/scripts.js' %}"></script>
 {% endblock %}
+

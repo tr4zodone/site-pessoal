@@ -6,3 +6,24 @@ Este é o código fonte do meu site pessoal. Se você for fuçar, verá que exis
 		* secret_key
 
 além de executar as migrações
+
+---
+
+# TO-DO:
+
+* ajustar o AJAX em /manager/ para que adicione o item em sua devida posicão alfabetica
+* ajustar o javascript da página manager para que o formulário de adicao de resources não ocupe o mesmo espaco que as resources
+  ** ele deve, na verdade, servir como uma especie de "floating menu", como o chat do Facebook
+
+* ajustar a paleta de cores do site
+* acrescentar sessão de projetos subdividida por temas
+  ** alterar layout do site para ajustar-se à nova configuracão
+  ** possibilitar a linkagem de itens do Sketchfab à sessão de projetos 3D
+* inserir uma foto minha ao site
+  ** inserir CV 
+* adicionar os plugins de source-code e tooltips ao CKEditor
+  ** deletar pastas inúteis de idiomas do CKEditor
+
+* implementar error pages
+* criar sessão de favoritos
+* OpenSSL

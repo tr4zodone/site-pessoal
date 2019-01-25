@@ -8,6 +8,7 @@ body {
   margin: 0 auto;
   background: #f6f7f9;
   font-family: "Alegreya Sans", sans-serif;
+  color: #7085a3;
   font-size: 1em; }
 
 @media screen and (max-width: 768px) {
@@ -309,14 +310,37 @@ footer .container p {
     color: #4e5f79;
     text-decoration: underline; }
 
+#Comércio {
+  order: 3;
+  flex-basis: 49.5%; }
+
 #Estudos {
   order: 0; }
 
-#Comércio {
+#Referências {
   order: 1; }
 
-#Hosting {
+#Utilidades {
   order: 2; }
+
+#Redessociais {
+  order: 4;
+  flex-basis: 49.5%; }
+
+.add-resource {
+  width: 30%;
+  background: #fff;
+  padding: 1em;
+  box-shadow: 1px 1px 3px 1px #cdd4df; }
+  .add-resource p {
+    width: 100%;
+    display: block;
+    margin: 5px auto; }
+    .add-resource p input, .add-resource p select {
+      width: 90%; }
+  .add-resource #submit {
+    display: block;
+    width: 90%; }
 
 footer {
   padding-bottom: 2em;

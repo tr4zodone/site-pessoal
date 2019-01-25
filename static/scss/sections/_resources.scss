@@ -2,6 +2,7 @@
 .chan-list {
 
     display: block;
+
     background-color: $foreground-color;
     box-shadow: 1px 1px 3px 1px lighten($primary-text-color, 30%);
     padding: 1em;
@@ -36,6 +37,7 @@
 
 .resources {
     display: flex;
+    background-color: red;
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 1.3em;
@@ -90,8 +92,8 @@
     order: 1;
 }
 
-#Hosting
+#Redessociais
 {
-    order: 2;
+    order: 1;
 }
 

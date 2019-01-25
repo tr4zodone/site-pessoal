@@ -18,9 +18,10 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
 class Resource(models.Model):
-    name = models.CharField(max_length=120, blank=False) 
-    url = models.URLField(blank=False) 
+    name = models.CharField(max_length=120, blank=False, unique=True) 
+    url = models.URLField(blank=False, unique=True) 
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    list_display = ("name", "url", "category")
 
     def __str__(self):
         return self.name

@@ -24,9 +24,17 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = os.environ.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
 
-ALLOWED_HOSTS = ['www.pauloroberto.me', 'www.iampaulo.com']
+"""
+REMBEMBER TO SET DEBUG TO FALSE
+"""
+DEBUG = True
+
+"""
+REMBEMBER TO SET PROPER URLS
+"""
+#ALLOWED_HOSTS = ['www.pauloroberto.me', 'www.iampaulo.com']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
