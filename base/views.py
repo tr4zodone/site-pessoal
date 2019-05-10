@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 
-from .models import About
+from .models import About, Index, English
 from .forms import ContactForm
 
 
@@ -11,18 +11,31 @@ from .forms import ContactForm
 
 def index_view(request):
     context = {}
+    try:
+        index_description = Index.objects.first()
+        context['index_description'] = index_description
+    except:
+        pass
+
     return render(request, "index.html", context)
 
+def english_view(request):
+    try:
+        context = {
+            'english': English.objects.first()
+        }
+        return render (request, "ingles.html", context)
+    except:
+        pass
 
 def about_view(request):
     context = {}
 
     try:
         about = About.objects.first()
+        context["about"] = about
     except: 
         pass
-
-    context["about"] = about
 
     return render(request, "about.html",context)
 

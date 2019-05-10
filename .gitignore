@@ -1,8 +1,12 @@
 db.sqlite3
-__pycache_/*
-*/__pycache__/
+__pycache__/*
+__pycache__/
 /__pycache__
+__pycache__
 */migrations
+migrations/*
+/migrations/
+migrations
 iampaulo_venv/
 /iampaulo_venv
 *~

@@ -3,8 +3,9 @@
 {% block title %} {{block.super}} {% endblock %}
 
 {% block content %}
-            <p>
-                Olá. Eu sou o Paulo e este aqui é meu website pessoal. Vamos ver no que dá.
-            </p>
-
+<div class="wrapper">
+    <div class="about about-body">
+	{{ index_description.body|safe}}
+    </div>
+</div>
 {% endblock %}
