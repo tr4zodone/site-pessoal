@@ -11,5 +11,8 @@ iampaulo_venv/
 /iampaulo_venv
 *~
 .sass-cache
+media
+/media/*
+media/*
 .#*
 *.pyc
