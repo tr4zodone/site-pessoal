@@ -14,7 +14,7 @@
     </script>
 
 
-    <title>{% block title %} pauloroberto.me {% endblock %}</title>
+    <title>{% block title %} Eu sou o Paulo. Olá. {% endblock %}</title>
         <meta name="viewport" content="width=device-width">
 
             <!-- Latest compiled and minified CSS -->
@@ -31,9 +31,8 @@
         <ul class="main-nav">
             <div class="container">
                 <h1 class="abs-header"><a class="header-index-link"href="{% url 'index' %}">pauloroberto.me</a></h1>
+                <li><a href="{% url 'blog' %}">blog</a></li>
                 <li><a href="{% url 'about' %}">sobre</a></li>
-                <li><a href="{% url 'projects' %}">projetos</a></li>
-                <li><a href="{% url 'english' %}">inglês</a></li>
 
                 {% if user.is_authenticated %}
                 <li class="admin-only"><a href="{% url 'admin:index' %}">ADMIN</a></li>
@@ -41,6 +40,8 @@
                     {% endif %}
             </div>
         </ul>
+
+
 
         <div class="container">
             {% block content %}
@@ -54,5 +55,6 @@
             <a rel="license" class="cc-license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
         </div>
     </footer>
+
     </body>
 </html>

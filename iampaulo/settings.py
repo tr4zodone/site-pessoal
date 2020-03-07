@@ -24,17 +24,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = os.environ.get('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False 
 
-"""
-REMBEMBER TO SET DEBUG TO FALSE
-"""
-DEBUG = True
-
-"""
-REMBEMBER TO SET PROPER URLS
-"""
-#ALLOWED_HOSTS = ['www.pauloroberto.me', 'www.iampaulo.com']
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['www.pauloroberto.me', 'www.iampaulo.com']
 
 
 # Application definition
@@ -47,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
+    'blog',
     'ckeditor',
-    'projects',
-    'ckeditor_uploader',
     'manager',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -134,8 +126,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'

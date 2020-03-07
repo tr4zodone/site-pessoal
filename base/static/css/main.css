@@ -8,7 +8,6 @@ body {
   margin: 0 auto;
   background: #f6f7f9;
   font-family: "Alegreya Sans", sans-serif;
-  color: #7085a3;
   font-size: 1em; }
 
 @media screen and (max-width: 768px) {
@@ -237,7 +236,6 @@ a:hover h1, a:hover h2 {
   background-color: #fff;
   box-shadow: 1px 1px 3px 1px #cdd4df;
   padding: 2em;
-  margin: auto;
   margin-bottom: 2em; }
   .about p {
     color: #333; }
@@ -251,61 +249,6 @@ a:hover h1, a:hover h2 {
 footer .container p {
   margin: 0; }
 
-.project-container {
-  font-family: "Alegreya Sans SC", "Alegreya Sans", sans-serif;
-  display: block;
-  min-height: 45%; }
-  .project-container .project {
-    height: 10em;
-    display: block;
-    vertical-align: top;
-    padding: 1em;
-    background-color: #fff;
-    box-shadow: 1px 1px 3px 1px #cdd4df;
-    margin-bottom: 1.5em; }
-  .project-container .project:last-child {
-    margin-bottom: 0; }
-  .project-container .websites ul {
-    list-style: none;
-    padding: 0; }
-    .project-container .websites ul a {
-      text-decoration: none;
-      color: #7085a3; }
-      .project-container .websites ul a:hover {
-        text-decoration: underline;
-        color: #4e5f79; }
-  .project-container .threeD ul {
-    padding: 0;
-    list-style: none; }
-    .project-container .threeD ul a {
-      color: #7085a3;
-      text-decoration: none; }
-      .project-container .threeD ul a:hover {
-        text-decoration: underline;
-        color: #4e5f79; }
-
-.album-img {
-  text-decoration: none; }
-
-.album-wrapper {
-  padding-bottom: 2em; }
-
-@media screen and (min-width: 540px) {
-  .album-wrapper {
-    width: 95%; }
-
-  .obj3d {
-    width: 49%; } }
-@media screen and (min-width: 970px) {
-  .album-wrapper {
-    width: 70%;
-    margin: auto; }
-
-  .obj3d {
-    display: inline-block;
-    width: 30%;
-    object-fit: cover;
-    height: 300px; } }
 .chan-list {
   display: block;
   background-color: #fff;
@@ -366,37 +309,14 @@ footer .container p {
     color: #4e5f79;
     text-decoration: underline; }
 
-#Comércio {
-  order: 3;
-  flex-basis: 49.5%; }
-
 #Estudos {
   order: 0; }
 
-#Referências {
+#Comércio {
   order: 1; }
 
-#Utilidades {
+#Hosting {
   order: 2; }
-
-#Redessociais {
-  order: 4;
-  flex-basis: 49.5%; }
-
-.add-resource {
-  width: 30%;
-  background: #fff;
-  padding: 1em;
-  box-shadow: 1px 1px 3px 1px #cdd4df; }
-  .add-resource p {
-    width: 100%;
-    display: block;
-    margin: 5px auto; }
-    .add-resource p input, .add-resource p select {
-      width: 90%; }
-  .add-resource #submit {
-    display: block;
-    width: 90%; }
 
 footer {
   padding-bottom: 2em;

@@ -20,34 +20,3 @@ class About(models.Model):
 
     def clean(self):
         limit_number_of_instances(self, 1)
-
-    class Meta:
-        verbose_name_plural = 'About'
-
-class Index(models.Model):
-    organizing_title = models.CharField(max_length=100)
-    body = RichTextUploadingField()
-
-    def __str__(self):
-        return self.organizing_title
-
-    def clean(self):
-        limit_number_of_instances(self, 1)
-
-    class Meta:
-        verbose_name_plural = 'Index'
-
-
-class English(models.Model):
-    organizing_title = models.CharField(max_length=100)
-    body = RichTextUploadingField()
-
-    def __str__(self):
-        return self.organizing_title
-
-    def clean(self):
-        limit_number_of_instances(self, 1)
-
-    class Meta:
-        verbose_name_plural = 'English'
-
